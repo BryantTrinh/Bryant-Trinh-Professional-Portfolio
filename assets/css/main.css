@@ -163,7 +163,6 @@ input, select, textarea {
 	a {
 		text-decoration: none;
 		color: inherit;
-		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
 		-moz-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-webkit-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-ms-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -1980,6 +1979,12 @@ input, select, textarea {
 		box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
 		margin-bottom: 40px;
 	}
+  
+  .item:hover {
+    box-shadow: 0 0 20px #008080;
+    transform: scale(1.15);
+    transition-duration: 750ms;
+    }
 
 		.item header {
 			background: #fff;
