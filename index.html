@@ -1,12 +1,32 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Bryant Trinh- Full Stack Web Developer</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+
+<head>
+  <title>Bryant Trinh- Full Stack Web Developer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init('zFZUzBh--BHKSq1US');
+    })();
+    function SendMail() {
+      const form = document.getElementById('contact-form');
+      emailjs.sendForm('service_ouu4kpm', 'template_7tj0ia5', form)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Your message has been sent successfully!');
+          form.reset();
+        }, function (error) {
+          console.log('FAILED...', error);
+          alert('Oops! Something went wrong. Please try again later.');
+        });
+    }
+  </script>
+</head>
+
+<body class="is-preload">,
 
 		<!-- Header -->
 			<div id="header">
@@ -35,10 +55,11 @@
 				<div class="bottom">
 
 					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://github.com/BryantTrinh?tab=repositories" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="trinhbryant@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+        <ul class="icons">
+          <li><a href="https://github.com/BryantTrinh?tab=repositories" class="icon brands fa-github"><span
+        class="label">Github</span></a></li>
+          <li><a href="mailto:trinhbryant@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
 
 				</div>
 
@@ -52,8 +73,8 @@
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Hello there, I'm <strong>Bryant Trinh</strong>, 
-                  <p><strong>A full stack web developer.</strong><br /></p>
+								<h2 class="alt"><strong>Bryant Trinh</strong>
+                  <p><strong>A full stack web developer</strong><br /></p>
 								</h2>
 							</header>
 
@@ -201,52 +222,36 @@
 								<h2>About Me</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/cover-image.png" alt="" /></a>
-
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-							ornare iaculis.</p>
-
-						</div>
-					</section>
-
+							<div class="image featured"><img src="images/cover-image.png" alt="Cover photo of Bryant Trinh" /></div>
+              <p>Completed University of Irvine's Continuing Education in regards to their Full Stack M.E.R.N. program.</p>
+							<p>Graduated from California State University in 2017 with a B.S. in Kinesiology and Exercise Science option in Fitness. Where I served over 1000 hours helping people from age 8 to 90.</p>
+              <br>
+              Worked with children on the spectrum at Behavioral Health Works as a behavioral therapist
+              <br>
+              <br>
+              <p>You can view my resume by clicking the icon below</p>
+                <a href="https://drive.google.com/file/d/1c4Q9FGHhxfhoXiZZaBYuzGhYgZtALGy4/view?usp=share_link">
+                  <img src="images/resume.png" alt="resume picture" style="height:100px"></a>
+              </section>
 				<!-- Contact -->
-					<section id="contact" class="four">
+        <section>
+					<section id="contact-form" class="four">
 						<div class="container">
 
 							<header>
 								<h2>Contact</h2>
 							</header>
 
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+							<p>You can contact me by either filling the form below or clicking the mail icon </p>
 
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
 
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-			</div>
+            <form method="post" onsubmit="SendMail()">
+              <input type="text" id="fullName" placeholder="Full Name" required /><br />
+              <input type="email" id="email" placeholder="Your Email" required /><br />
+              <textarea id="message" placeholder="Message" required></textarea><br />
+              <button type="submit">Send</button>
+            </form>
+          </section>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -256,6 +261,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
