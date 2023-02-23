@@ -1,12 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 
-/*
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -1829,9 +1823,9 @@ input, select, textarea {
 
 		ul.icons a {
 			display: inline-block;
-			width: 2em;
-			height: 2em;
-			line-height: 2em;
+			width: 5em;
+			height: 5em;
+			line-height: 5em;
 			text-align: center;
 			border: 0;
 		}
@@ -2081,7 +2075,7 @@ input, select, textarea {
 			}
 
 		#header .icons {
-			font-size: 0.8em;
+			font-size: 1.25em;
 			text-align: center;
 		}
 
