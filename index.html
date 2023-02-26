@@ -6,24 +6,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init('zFZUzBh--BHKSq1US');
-    })();
-    function SendMail() {
-      const form = document.getElementById('contact-form');
-      emailjs.sendForm('service_ouu4kpm', 'template_7tj0ia5', form)
-        .then(function (response) {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Your message has been sent successfully!');
-          form.reset();
-        }, function (error) {
-          console.log('FAILED...', error);
-          alert('Oops! Something went wrong. Please try again later.');
-        });
-    }
-  </script>
 </head>
 
 <body class="is-preload">,
@@ -46,7 +28,7 @@
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
 								<li><a href="#projects" id="projects-link"><span class="icon solid fa-th">Projects</span></a></li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+								<li><a href="#contact-form" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
 							</ul>
 						</nav>
 
@@ -245,13 +227,16 @@
 
 							<p>You can contact me by either filling the form below or clicking the mail icon </p>
 
-
-            <form method="post" onsubmit="SendMail()">
-              <input type="text" id="fullName" placeholder="Full Name" required /><br />
-              <input type="email" id="email" placeholder="Your Email" required /><br />
-              <textarea id="message" placeholder="Message" required></textarea><br />
-              <button type="submit">Send</button>
-            </form>
+          <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>Get in Touch</h3>
+              <input type="text" id="name" placeholder="Your Full Name" required>
+              <input type="email" id="email" placeholder="Your Email" required>
+              <input type="text" id="phone" placeholder="Your Phone Number" required>
+              <textarea id="message" rows="4" placeholder="How can I help you?"></textarea>
+              <button type="submit">Submit Message</button>
+          </form>
+            
+            
           </section>
 
 		<!-- Scripts -->
@@ -261,6 +246,22 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script>
+        function sendEmail() {
+          Email.send({
+                secureToken: "8480c26c-0a26-4945-8866-4734785f7ea7",
+                To: 'trinhbryant@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Inquiry",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Phone Number: " + document.getElementById("phone").value
+                    + "<br> Message: " + document.getElementById("message").value
+              }).then(
+                message => alert("Message Sent Successfully!")
+              );
+        }
+      </script>
 	</body>
 </html>
