@@ -175,6 +175,12 @@ body {
 	color: #888;
 }
 
+.bold-text {
+  font-weight: bold;
+}
+
+
+
 /* body.is-preload *,
 body.is-preload *:before,
 body.is-preload *:after {
