@@ -1857,6 +1857,7 @@ article:last-child {
 .image img {
 	display: block;
 	width: 100%;
+  height: 100%;
 }
 
 .image.avatar48 {
@@ -1873,6 +1874,7 @@ article:last-child {
 .image.fit {
 	display: block;
 	width: 100%;
+  height: 100%;
 }
 
 .image.featured {
@@ -2297,6 +2299,12 @@ button:active,
 
 #nav ul li a.active span:before {
 	color: #e27689;
+}
+
+#nav ul li a:hover {
+  background-color:  #008080;
+  color: #fff;
+  transition: background-color: 0.3 ease;
 }
 
 /* Footer */
